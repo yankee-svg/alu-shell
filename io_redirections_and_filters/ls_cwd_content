@@ -1,0 +1,15 @@
+total 52
+drwxr-xr-x 2 yankee yankee 4096 Sep 30 12:51 .
+drwxr-xr-x 7 yankee yankee 4096 Sep 30 11:54 ..
+-rwxr-xr-x 1 yankee yankee   32 Sep 30 12:12 0-hello_world
+-rwxr-xr-x 1 yankee yankee   28 Sep 30 12:16 1-confused_smiley
+-rwxr-xr-x 1 yankee yankee   28 Sep 30 12:25 2-hellofile
+-rwxr-xr-x 1 yankee yankee   39 Sep 30 12:28 3-twofiles
+-rwxr-xr-x 1 yankee yankee   29 Sep 30 12:35 4-lastlines
+-rwxr-xr-x 1 yankee yankee   29 Sep 30 12:39 5-firstlines
+-rwxr-xr-x 1 yankee yankee   40 Sep 30 12:42 6-third_line
+-rwxr-xr-x 1 yankee yankee   89 Sep 30 12:48 7-file
+-rwxr-xr-x 1 yankee yankee   36 Sep 30 12:51 8-cwd_state
+-rw-r--r-- 1 yankee yankee    9 Sep 30 11:58 README.md
+-rw-r--r-- 1 yankee yankee   17 Sep 30 12:48 \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 yankee yankee    0 Sep 30 12:51 ls_cwd_content

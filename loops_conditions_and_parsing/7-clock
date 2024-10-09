@@ -5,18 +5,20 @@ minute=1
 
 while [ $hour -le 12 ]
 do
+    echo "Hour: $hour"
+
     while [ $minute -le 59 ]
     do
-        echo "$hour"
         echo "$minute"
-        
+
         minute=$((minute + 1))
     done
-   
+
     minute=1
-    
+
     # Increment the hour counter
     hour=$((hour + 1))
 done
+
 
 

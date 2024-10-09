@@ -5,18 +5,17 @@ log_file="access.log"
 # Use awk to process the log file
 awk '
 {
-    # Extract IP and HTTP status code; assuming they are in the common log format
+    # Extract IP and HTTP status code assuming they are in the common log format
     ip=$1
-    http_code=$(NF-1) # assuming the HTTP code is the second last field
-    # Combine IP and HTTP code to create a key
-    key = ip " " http_code
-    # Increment the count for this key
-    count[key]++
+    http_code=$(NF-1) # assuming the HTTP status code is the second-to-last field
+    # Combine IP and HTTP code to form a key
+    count[ip " " http_code]++
 }
 END {
-    # Output each entry in the format: OCCURRENCE_NUMBER IP HTTP_CODE
-    for (entry in count) {
-        print count[entry], entry
+    # Print each key in the desired format
+    for (key in count) {
+        print count[key], key
     }
 }
 ' "$log_file" | sort -nr
+

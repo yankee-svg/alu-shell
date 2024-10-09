@@ -1,21 +1,3 @@
 #!/usr/bin/env bash
-# Define the log file (replace 'access.log' with your actual log file name)
-log_file="access.log"
-
-# Use awk to process the log file
-awk '
-{
-    # Extract IP and HTTP status code assuming they are in the common log format
-    ip=$1
-    http_code=$(NF-1) # assuming the HTTP status code is the second-to-last field
-    # Combine IP and HTTP code to form a key
-    count[ip " " http_code]++
-}
-END {
-    # Print each key in the desired format
-    for (key in count) {
-        print count[key], key
-    }
-}
-' "$log_file" | sort -nr
-
+#script that sort users by IP and HTTP status code
+awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn

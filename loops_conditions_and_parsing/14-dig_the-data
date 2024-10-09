@@ -14,9 +14,9 @@ awk '
     count[key]++
 }
 END {
-    # Print the results in the required format
+    # Output each entry in the format: OCCURRENCE_NUMBER IP HTTP_CODE
     for (entry in count) {
         print count[entry], entry
     }
 }
-' "$log_file" | sort -nr | head -n 10
+' "$log_file" | sort -nr

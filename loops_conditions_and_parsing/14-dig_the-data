@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
-# Specify the path to your Apache access log file
-log_file="apache-access.log"
+# Define the log file (replace 'access.log' with your actual log file name)
+log_file="access.log"
 
-awk '{print $1, $9}' "$log_file" | \
-    awk '{count[$1, $2]++} END {for (key in count) print count[key], key}' | \
-    sort -nr
-
+# Use awk to process the log file
+awk '
+{
+    # Extract IP and HTTP status code; assuming they are in the common log format
+    ip=$1
+    http_code=$(NF-1) # assuming the HTTP code is the second last field
+    # Combine IP and HTTP code to create a key
+    key = ip " " http_code
+    # Increment the count for this key
+    count[key]++
+}
+END {
+    # Print the results in the required format
+    for (entry in count) {
+        print count[entry], entry
+    }
+}
+' "$log_file" | sort -nr | head -n 10

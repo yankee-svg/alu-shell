@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script is for displaying lines that contain the bash wrd
+# shellcheck disable=SC2009
+./1-list_your_processes | grep "bash"
